@@ -1,1 +1,1 @@
-include ':app', ':datastructures'
+include ':app', ':datastructures', ':codewars'
