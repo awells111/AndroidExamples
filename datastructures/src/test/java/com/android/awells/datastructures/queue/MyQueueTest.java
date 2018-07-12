@@ -1,6 +1,5 @@
 package com.android.awells.datastructures.queue;
 
-import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
 import org.junit.Test;
@@ -53,7 +52,7 @@ public class MyQueueTest {
     MyQueue.poll();
     MyQueue.poll();
 
-    assertFalse(MyQueue.isEmpty());
+    assertTrue(MyQueue.isEmpty());
   }
 
   @Test

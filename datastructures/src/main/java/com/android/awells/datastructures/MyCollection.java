@@ -9,6 +9,4 @@ public interface MyCollection<E> {
   default boolean isEmpty() {
     return size() == 0;
   }
-
 }
-

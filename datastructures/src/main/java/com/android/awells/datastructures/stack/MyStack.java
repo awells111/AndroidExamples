@@ -1,12 +1,11 @@
-package com.android.awells.datastructures.queue;
+package com.android.awells.datastructures.stack;
 
 import com.android.awells.datastructures.MyCollection;
 
-public class MyQueue<E> implements MyCollection<E> {
+public class MyStack<E> implements MyCollection<E> {
 
   private int size;
   private Node head;
-  private Node tail;
 
   @Override
   public int size() {
@@ -19,10 +18,9 @@ public class MyQueue<E> implements MyCollection<E> {
 
     if (head == null) {
       head = node;
-      tail = node;
     } else {
-      tail.next = node;
-      tail = tail.next;
+      node.next = head;
+      head = node;
     }
 
     size++;
@@ -36,18 +34,13 @@ public class MyQueue<E> implements MyCollection<E> {
     return head.data;
   }
 
-  public E poll() {
+  public E pop() {
     if (head == null) {
       return null;
     }
 
     E data = head.data;
     head = head.next;
-
-    if (head == null) {
-      tail = null;
-    }
-
     size--;
 
     return data;
