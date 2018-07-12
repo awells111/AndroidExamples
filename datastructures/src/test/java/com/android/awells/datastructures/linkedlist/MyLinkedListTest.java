@@ -1,31 +1,23 @@
 package com.android.awells.datastructures.linkedlist;
 
-import static junit.framework.TestCase.assertFalse;
 import static junit.framework.TestCase.assertTrue;
 
 import org.junit.Test;
 
 public class MyLinkedListTest {
 
-  public static final int[] EXPECTED_INTS = {-42, 0, 71};
+  private static final int[] EXPECTED_INTS = {-42, 0, 71};
   private MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
 
   @Test
   public void sizeZero() {
-    assertTrue(myLinkedList.size() == 0);
+    assertTrue(myLinkedList.isEmpty());
   }
 
   @Test
   public void sizeThree() {
     addTestData();
     assertTrue(myLinkedList.size() == 3);
-  }
-
-  @Test
-  public void add() {
-    myLinkedList.add(EXPECTED_INTS[0]);
-
-    assertTrue(myLinkedList.get(0).equals(EXPECTED_INTS[0]));
   }
 
   @Test
@@ -63,7 +55,7 @@ public class MyLinkedListTest {
     myLinkedList.remove(0);
     myLinkedList.remove(0);
 
-    assertTrue(myLinkedList.size() == 0);
+    assertTrue(myLinkedList.isEmpty());
   }
 
   @Test
@@ -96,16 +88,17 @@ public class MyLinkedListTest {
     assertTrue(myLinkedList.get(2).equals(EXPECTED_INTS[2]));
   }
 
-  @Test
-  public void isEmptyTrue() {
-    assertTrue(myLinkedList.isEmpty());
-  }
-
-  @Test
-  public void isEmptyFalse() {
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void getNodeNegativeIndex() {
     addTestData();
 
-    assertFalse(myLinkedList.isEmpty());
+    myLinkedList.get(-1);
+  }
+
+  @Test(expected = IndexOutOfBoundsException.class)
+  public void getNodeSize() {
+    addTestData();
+    myLinkedList.get(myLinkedList.size());
   }
 
   private void addTestData() {

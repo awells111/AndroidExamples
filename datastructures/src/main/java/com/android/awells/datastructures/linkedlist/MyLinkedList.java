@@ -1,19 +1,18 @@
 package com.android.awells.datastructures.linkedlist;
 
-public class MyLinkedList<E> {
+import com.android.awells.datastructures.MyCollection;
+
+public class MyLinkedList<E> implements MyCollection<E> {
 
   private int size;
   private Node head;
 
+  @Override
   public int size() {
     return size;
   }
 
-  public boolean isEmpty() {
-    return size == 0;
-  }
-
-  private Node getNode(int index) {
+  Node getNode(int index) {
     if (index >= size || index < 0) {
       throw new IndexOutOfBoundsException();
     }
@@ -27,6 +26,7 @@ public class MyLinkedList<E> {
     return node;
   }
 
+  @Override
   public void add(E e) {
     Node newNode = new Node(e);
 
@@ -80,7 +80,7 @@ public class MyLinkedList<E> {
     return node.data;
   }
 
-  class Node {
+  private class Node {
 
     E data;
     Node next;
