@@ -29,6 +29,9 @@ public class SolutionTest {
   private static final int TEST_ADD_DIGIT = 5;
   private static final long EXPECTED_ADD_N = 123095;
 
+  private static final long TEST_NUMBER_LEADING_ZERO = 10;
+  private static final long EXPECTED_NUMBER_LEADING_ZERO = -1;
+
   @Before
   public void setUp() {
     /*We are using a setUp method to make it clear that TEST_VALUES must have 10 total values*/
@@ -59,6 +62,11 @@ public class SolutionTest {
   }
 
   @Test
+  public void nextSmallerLeadingZero() {
+    assertTrue(Solution.nextSmaller(TEST_NUMBER_LEADING_ZERO) == EXPECTED_NUMBER_LEADING_ZERO);
+  }
+
+  @Test
   public void findNextSmallestDigit() {
     assertTrue(Solution.findNextBiggestDigit(TEST_VALUES, 9) == 7);
   }
@@ -67,4 +75,6 @@ public class SolutionTest {
   public void addDigit() {
     assertTrue(Solution.addDigit(TEST_ADD_N, TEST_ADD_DIGIT) == EXPECTED_ADD_N);
   }
+
+
 }

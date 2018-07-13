@@ -10,7 +10,8 @@ import org.junit.Test;
  *  */
 public class SolutionTest {
 
-#set( $raw_methods = ${CW_Test_Methods} )
-#set( $replaced_class_name = $raw_methods.replace("Kata", "Solution") )
-${replaced_class_name}
+  @Test
+  public void testExample() {
+    assertTrue(true);
+  }
 }

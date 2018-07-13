@@ -4,7 +4,7 @@
 /** 
  * Solution to the challenge at ${CW_URL}
  *  */
-public class Solution {
+class Solution {
 
 ${CW_Methods}
 }

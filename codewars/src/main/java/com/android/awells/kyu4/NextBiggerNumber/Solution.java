@@ -1,11 +1,11 @@
-package com.android.awells.kyu4.NextSmallerNumber;
+package com.android.awells.kyu4.NextBiggerNumber;
 
 /**
- * Solution to the challenge at https://www.codewars.com/kata/next-smaller-number-with-the-same-digits/train/java
+ * Solution to the challenge at https://www.codewars.com/kata/next-bigger-number-with-the-same-digits/train/java
  */
 class Solution {
 
-  public static long nextSmaller(long n) {
+  public static long nextBiggerNumber(long n) {
     /*This array works as a map. We will count the number of times the numbers 0-9 appear in n.*/
     int[] nums = new int[10];
 
@@ -21,17 +21,11 @@ class Solution {
       /*Increment the count of the most recent digit*/
       nums[lastDigit]++;
 
-      /*nextBiggestDigit is the highest digit that is still less than lastDigit*/
+      /*nextBiggestDigit is the lowest digit that is still greater than lastDigit*/
       int nextBiggestDigit = findNextBiggestDigit(nums, lastDigit);
 
-      /*If we have seen a smaller digit, then we know there is a possible smaller number that we can return.*/
+      /*If we have seen a bigger digit, then we know there is a possible bigger number that we can return.*/
       if (nextBiggestDigit > -1) {
-
-        /*This codewars challenge does not want any numbers that have a leading zero. This if statement
-         * is written to make sure we do not return a number that has a leading zero.*/
-        if (n == 0 && nextBiggestDigit == 0) {
-          return -1;
-        }
 
         /*Add the next biggest digit back to n*/
         n = addDigit(n, nextBiggestDigit);
@@ -39,44 +33,44 @@ class Solution {
         /*Decrement the count of nextBiggestDigit*/
         nums[nextBiggestDigit]--;
 
-        /*The next smallest number is built using buildSmallestNumber(nums).*/
+        /*The next biggest number is built using buildSmallestNumber(nums).*/
         return buildSmallestNumber(nums, n);
       }
     }
 
-    /*No smaller number has been found*/
+    /*No bigger number has been found*/
     return -1;
   }
 
   /**
    * @param nums An array of ints that contains the count of each digit seen in long n
-   * @param limit Only check numbers less than limit
-   * @return The greatest value that is present in nums but less than limit, or -1 if no value is
+   * @param limit Only check numbers greater than limit
+   * @return The lowest value that is present in nums but greater than limit, or -1 if no value is
    * found.
    */
   public static int findNextBiggestDigit(int[] nums, int limit) {
-    /*Check if any number between (limit - 1) and 0 has been spotted. */
-    while (--limit >= 0) {
+    /*Check if any number between (limit + 1) and 10 has been spotted. */
+    while (++limit <= 9) {
 
-      /*If a number between (limit - 1) and 0 has been spotted, return that number*/
+      /*If a number between (limit + 1) and 10 has been spotted, return that number*/
       if (nums[limit] > 0) {
         return limit;
       }
     }
 
     /*Else, return -1*/
-    return limit;
+    return -1;
   }
 
   /**
    * @param nums An array of ints that contains the count of each digit seen in long n
    * @param n The number that will receive the seen digits in nums
-   * @return The greatest possible number, which will still be less than the initial Kata input
+   * @return The lowest possible number, which will still be greater than the initial Kata input
    */
   private static long buildSmallestNumber(int[] nums, long n) {
 
-    /*For each number between 9 and 0, add that number back to n to create the next smallest number*/
-    for (int i = 9; i >= 0; ) {
+    /*For each number between 0 and 9, add that number back to n to create the next biggest number*/
+    for (int i = 0; i <= 9; ) {
       if (nums[i] > 0) {
 
         n = addDigit(n, i);
@@ -86,8 +80,8 @@ class Solution {
 
       } else {
 
-        /*No digit of value i has been found. Decrement i and try again until we reach 0*/
-        i--;
+        /*No digit of value i has been found. Increment i and try again until we reach 0*/
+        i++;
       }
     }
 
