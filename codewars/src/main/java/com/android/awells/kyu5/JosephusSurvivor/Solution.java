@@ -3,7 +3,7 @@ package com.android.awells.kyu5.JosephusSurvivor;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Solution {
+class Solution {
   /*https://www.codewars.com/kata/josephus-survivor/train/java*/
 
   /*In this kata you have to correctly return who is the "survivor", ie: the last element of a Josephus permutation.
