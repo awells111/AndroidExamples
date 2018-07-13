@@ -1,8 +1,9 @@
 package com.android.awells.kyu5.HumanReadableTime;
 
+/**
+ * Solution to the challenge at https://www.codewars.com/kata/52685f7382004e774f0001f7/train/java
+ */
 class Solution {
-  /*https://www.codewars.com/kata/52685f7382004e774f0001f7/train/java*/
-
   /* Write a function, which takes a non-negative integer (seconds) as input and returns the time in a human-readable format (HH:MM:SS)
 
   HH = hours, padded to 2 digits, range: 00 - 99
@@ -17,15 +18,11 @@ class Solution {
     int leftoverSeconds = leftoverSeconds(seconds);
     int leftoverMinutes = leftoverMinutes(minutes);
 
-    StringBuilder sb = new StringBuilder();
-
-    sb.append(timeToString(hours));
-    sb.append(":");
-    sb.append(timeToString(leftoverMinutes));
-    sb.append(":");
-    sb.append(timeToString(leftoverSeconds));
-
-    return sb.toString();
+    return timeToString(hours)
+        + ":"
+        + timeToString(leftoverMinutes)
+        + ":"
+        + timeToString(leftoverSeconds);
   }
 
   static int secondsToMinutes(int seconds) {

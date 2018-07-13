@@ -3,9 +3,10 @@ package com.android.awells.kyu5.JosephusSurvivor;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Solution to the challenge at https://www.codewars.com/kata/josephus-survivor/train/java
+ */
 class Solution {
-  /*https://www.codewars.com/kata/josephus-survivor/train/java*/
-
   /*In this kata you have to correctly return who is the "survivor", ie: the last element of a Josephus permutation.
 
   Basically you have to assume that n people are put into a circle and that they are eliminated in steps of k elements, like this:

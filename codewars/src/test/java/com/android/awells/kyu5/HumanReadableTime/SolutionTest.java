@@ -4,12 +4,16 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+/**
+ * Tests written by https://github.com/awells111. I am writing these BEFORE I write my solution in
+ * order to practice Test Driven Development.
+ */
 public class SolutionTest {
 
-  public static final String EXPECTED_STRING = "99:59:59";
-  public static final String TIME_STRING_ZERO = "00";
-  public static final String TIME_STRING_NINE = "09";
-  public static final String TIME_STRING_TEN = "10";
+  private static final String EXPECTED_STRING = "99:59:59";
+  private static final String TIME_STRING_ZERO = "00";
+  private static final String TIME_STRING_NINE = "09";
+  private static final String TIME_STRING_TEN = "10";
   private static final int TEST_SECONDS = 359999;
   private static final int TEST_MINUTES = 5999;
   private static final int TEST_HOURS = 99;

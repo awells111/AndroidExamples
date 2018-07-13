@@ -4,7 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class KataTests {
+/**
+ * Tests written by codewars. These will only be run AFTER I have solved the problem and after I
+ * have created my own tests.
+ */
+public class StockTest {
 
   @Test
   public void basicTest1() {

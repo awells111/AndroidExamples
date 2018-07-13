@@ -6,6 +6,10 @@ import static org.junit.Assert.assertTrue;
 import java.util.List;
 import org.junit.Test;
 
+/**
+ * Tests written by https://github.com/awells111. I am writing these BEFORE I write my solution in
+ * order to practice Test Driven Development.
+ */
 public class SolutionTest {
 
   private static final int TEST_n = 7;

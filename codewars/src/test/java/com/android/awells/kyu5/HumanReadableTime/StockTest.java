@@ -4,10 +4,11 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-/*Tests written by codewars. These will only be run AFTER I have solved the problem and after I have
-created my own tests.*/
-
-public class ExampleTest {
+/**
+ * Tests written by codewars. These will only be run AFTER I have solved the problem and after I
+ * have created my own tests.
+ */
+public class StockTest {
   @Test
   public void Tests() {
     assertEquals("makeReadable(0)", "00:00:00", Solution.makeReadable(0));

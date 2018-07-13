@@ -5,6 +5,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Tests written by https://github.com/awells111. I am writing these BEFORE I write my solution in
+ * order to practice Test Driven Development.
+ */
 public class SolutionTest {
 
   private static final long TEST_NUMBER_ONE_DIGIT = 8;

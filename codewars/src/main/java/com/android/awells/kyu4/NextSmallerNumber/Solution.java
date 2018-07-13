@@ -1,7 +1,5 @@
 package com.android.awells.kyu4.NextSmallerNumber;
 
-/*https://www.codewars.com/kata/next-smaller-number-with-the-same-digits/train/java*/
-
 /*Write a function that takes a positive integer and returns the next smaller positive integer containing the same digits.
 
 For example:
@@ -19,6 +17,9 @@ some tests will include very large numbers.
 test data only employs positive integers.
 The function you write for this challenge is the inverse of this kata: "Next bigger number with the same digits."*/
 
+/**
+ * Solution to the challenge at https://www.codewars.com/kata/next-smaller-number-with-the-same-digits/train/java
+ */
 class Solution {
 
   public static long nextSmaller(long n) {
